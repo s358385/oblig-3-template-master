@@ -112,16 +112,16 @@ public class SBinTre<T> {
     }
 
     public int antall(T verdi) {
-        Stack<Node> s = new Stack<Node>();
+        Stack<Node> stack = new Stack<Node>();
         Node<T> p = rot;
         int antall = 0;
-        while (p != null || s.empty() == false) {
+        while (p != null || stack.empty() == false) {
             while (p != null) {
-                s.push(p);
+                stack.push(p);
                 p = p.venstre;
             }
-            p = s.peek();
-            s.pop();
+            p = stack.peek();
+            stack.pop();
             if (p.verdi == verdi)
                 antall++;
             p = p.høyre;

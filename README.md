@@ -14,4 +14,8 @@ Dette gjentas for hver node, helt til vi kommer til slutten av treet.
 Verdien blir lagt inn i en ny node, og er barn til den siste noden vi psserte.
 Vi bruker Node<T> q, for å holde styr på p.forelder.
 
-I oppgave 2 så brukte jeg en ... til å ...
+I oppgave 2 så brukte jeg en hjelpevariabel Stack<Node> stack, for å implementere int antall(T verdi).
+Jeg benytter stack for å traversere treet.
+Så finner jeg ut når parameter verdi, er lik nodeverdi og teller antallet ganger dette forekommer.
+Tilslutt returnerer jeg dette antallet;
+
