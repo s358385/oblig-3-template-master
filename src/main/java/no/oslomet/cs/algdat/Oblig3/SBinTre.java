@@ -112,7 +112,21 @@ public class SBinTre<T> {
     }
 
     public int antall(T verdi) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        Stack<Node> s = new Stack<Node>();
+        Node<T> p = rot;
+        int antall = 0;
+        while (p != null || s.empty() == false) {
+            while (p != null) {
+                s.push(p);
+                p = p.venstre;
+            }
+            p = s.peek();
+            s.pop();
+            if (p.verdi == verdi)
+                antall++;
+            p = p.høyre;
+        }
+        return antall;
     }
 
     public void nullstill() {
