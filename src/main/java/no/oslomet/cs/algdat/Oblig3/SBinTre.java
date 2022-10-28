@@ -81,8 +81,7 @@ public class SBinTre<T> {
         return antall == 0;
     }
 
-    public boolean leggInn(T verdi) {
-        //throw new UnsupportedOperationException("Ikke kodet ennå!");
+    public boolean leggInn(T verdi) { //Kilde: Programkode 5.2.3 a)
         Node<T> p = rot, q = null;
         int cmp = 0;
         while (p != null){
@@ -90,7 +89,7 @@ public class SBinTre<T> {
             cmp = comp.compare(verdi,p.verdi);
             p = cmp < 0 ? p.venstre : p.høyre;
         }
-        p = new Node<T>(verdi);
+        p = new Node<T>(verdi,q);
         if (q == null){
             rot = p;
         }
