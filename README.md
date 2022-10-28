@@ -28,3 +28,11 @@ For å implementere <T>Node<T> nestePostorden(Node<T> p), sjekker jeg for ulike 
 Hvis p er rotnoden, så er p den siste i postorden, det er ingen neste node og vi returnerer null.
 Eller hvis p er høyre barn til sin forelder eller den ikke eksisterer, er forelder den neste.
 Eller hvis p er venstre barn til sin forelder og ikke et enebarn, så er den neste noden førstePostorden(høyrebarn).
+
+I oppgave 4 brukte jeg programkode 5.1.15 c) for å
+implementere postorden(Oppgave <? super T> oppgave).
+Men jeg bruker postorden, istedenfor inorden.
+Jeg bruker en while-løkke for å danne en postorden-traversering.
+Jeg bruker metoden, nestePostorden for å finne neste metode. Og bruker p ikke er null, som en stopper.
+Jeg brukte fasit til oppgave 7, fra kapittel 5.1.7,i kompendiet, for å implementere postorderRecursive(Node<T> p, Oppgave<? super T> oppgave).
+Da traverserte jeg treet i postorden rekkefølge, ved å lage et rekursivt kall, først for venstrebarn og så høyrebarn.
