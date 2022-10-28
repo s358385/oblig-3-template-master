@@ -19,3 +19,12 @@ Jeg benytter stack for å traversere treet.
 Så finner jeg ut når parameter verdi, er lik nodeverdi og teller antallet ganger dette forekommer.
 Tilslutt returnerer jeg dette antallet;
 
+I oppgave 3 brukte jeg programkode 5.1.7 h) for å implementere <T>Node<T> førstePostorden(Node<T> p).
+I postorden er den første noden, bladnoden som ligger lengst til venstre i treet.
+Ved hjelp av en while-løkke, setter jeg p til å være p.venstre, helt til det ikke er noen venstrebarn igjen.
+SÅ går jeg videre over til høyre, og stopper når det ikke er noen høyrebarn igjen.
+Tilslutt returnerer jeg den nye p som er den første noden i postorden.
+For å implementere <T>Node<T> nestePostorden(Node<T> p), sjekker jeg for ulike tilfeller, hva den neste noden i postorden er.
+Hvis p er rotnoden, så er p den siste i postorden, det er ingen neste node og vi returnerer null.
+Eller hvis p er høyre barn til sin forelder eller den ikke eksisterer, er forelder den neste.
+Eller hvis p er venstre barn til sin forelder og ikke et enebarn, så er den neste noden førstePostorden(høyrebarn).

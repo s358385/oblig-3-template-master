@@ -133,7 +133,7 @@ public class SBinTre<T> {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
 
-    private static <T> Node<T> førstePostorden(Node<T> p) {
+    private static <T> Node<T> førstePostorden(Node<T> p) { //Kilde: Programkode 5.1.7 h)
         while (true) {
             if (p.venstre != null) {
                 p = p.venstre;
@@ -148,7 +148,18 @@ public class SBinTre<T> {
     }
 
     private static <T> Node<T> nestePostorden(Node<T> p) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        if (p.forelder == null){
+            return null;
+        }
+        Node<T> parent = p.forelder;
+        if (parent.høyre == null || parent.høyre == p){
+            return parent;
+        }
+        Node<T> current = parent.høyre;
+        while (current.venstre != null){
+            current = current.venstre;
+        }
+        return current;
     }
 
     public void postorden(Oppgave<? super T> oppgave) {
